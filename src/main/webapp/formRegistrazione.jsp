@@ -1,5 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
 <html>
 <head>
     <title>Registrazione</title>
@@ -15,35 +14,41 @@
         </ul>
     </nav>
 </header>
-	<form action="registrazione" method="post">
-	    <div>
-	        <label for="nome">Nome:</label>
-	        <span><input type="text" id="nome" name="nome" value="${param['nome']}"></span>
-	    </div>
-	    <div>
-	        <label for="cognome">Cognome:</label>
-	        <span><input type="text" id="cognome" name="cognome" value="${param['cognome']}"></span>
-	    </div>
-	    <div>
-	        <label for="email">Email:</label>
-	        <span><input type="email" id="email" name="email" value="${param['email']}"></span>
-	        <span>${messaggiErrore["email"]}</span>
-	    </div>
-	    <div>
-	        <label for="cellulare">Cellulare:</label>
-	        <span><input type="text" id="cellulare" name="cellulare" value="${param['cellulare']}"></span>
-	    </div>
-	    <div>
-	        <label for="data">Data di nascita:</label>
-	        <span><input type="date" id="data" name="data_di_nascita" value="${param['data_di_nascita']}"></span>
-	    </div>
-	    <div>
-	        <label for="password">Password:</label>
-	        <span><input type="password" id="password" name="password"></span>
-	    </div>
-	    <div>
-	        <button type="submit">Conferma</button>
-	    </div>
-	</form>
+	<section class="registration-form">
+		<form action="registrazione" method="post">
+			<div>Registrati</div>
+			<div>	    
+				<div><label for="nome">Nome:</label></div>
+		        <div><input type="text" id="nome" name="nome" value="${param['nome']}" required></div>
+		        <div>${messaggiErrore["nome"]}</div>
+		    </div>
+		    <div>
+		        <div><label for="cognome">Cognome:</label></div>
+		        <div><input type="text" id="cognome" name="cognome" value="${param['cognome']}" required></div>
+		        <div>${messaggiErrore["cognome"]}</div>
+		    </div>
+		    <div>
+		        <div><label for="email">Email:</label></div>
+		        <div><input type="email" id="email" name="email" value="${param['email']}" required></div>
+		        <div>${messaggiErrore["email"]}</div>
+		    </div>
+		    <div>
+		        <div><label for="cellulare">Cellulare:</label></div>
+		        <div><input type="text" id="cellulare" name="cellulare" value="${param['cellulare']}" maxlength="10" placeholder="10 caratteri" required></div>
+		        <div>${messaggiErrore["cellulare"]}</div>
+		    </div>
+		    <div>
+		        <div><label for="data">Data di nascita:</label></div>
+		        <div><input type="date" id="data" name="data_di_nascita" value="${param['data_di_nascita']}" required></div>
+		        <div>${messaggiErrore["data_di_nascita"]}</div>
+		    </div>
+		    <div>
+		        <div><label for="password">Password:</label></div>
+		        <div><input type="password" id="password" name="password" minlength="8" placeholder="almeno 8 caratteri senza spazi vuoti" required></div>
+		        <div>${messaggiErrore["password"]}</div>
+		    </div>
+		    <button type="submit">Conferma</button>
+		</form>
+	</section>
 </body>
 </html>

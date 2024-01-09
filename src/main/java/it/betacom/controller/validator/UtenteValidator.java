@@ -18,11 +18,25 @@ public class UtenteValidator {
     }
 
     public boolean validate(Utente utente) {
-        if (utenteDao.findByUsernameOrEmail(utente.getEmail()) != null) {
-            messaggiErrore.put("email", "email già esistente");
-            return false;
-        }
-        return true;
+    	if(utente.getNome().trim().length() < 2)
+    		messaggiErrore.put("nome", "inserire almeno due caratteri!");
+    	
+    	if(utente.getCognome().trim().length() < 2)
+    		messaggiErrore.put("cognome", "inserire almeno due caratteri!");
+    	
+        if (utenteDao.findByUsernameOrEmail(utente.getEmail()) != null)
+            messaggiErrore.put("email", "email già esistente!");
+        
+        if(utente.getDataDiNascita() == null)
+        	messaggiErrore.put("data_di_nascita", "inserire data valida!");
+        
+        if(utente.getCellulare().contains(" ") || utente.getCellulare().trim().length() != 10)
+        	messaggiErrore.put("cellulare", "inserire cellulare valido!");
+        
+        if(utente.getPassword().contains(" ") || utente.getPassword().trim().length() < 8)
+        	messaggiErrore.put("password", "inserire password valida!");
+        
+        return messaggiErrore.isEmpty();
     }
 
     public Map<String, String> getMessaggiErrore() {

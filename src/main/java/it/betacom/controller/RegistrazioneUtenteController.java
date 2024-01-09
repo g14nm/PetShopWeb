@@ -26,16 +26,24 @@ public class RegistrazioneUtenteController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         UtenteValidator utenteValidator = new UtenteValidator();
         Utente utente = new Utente(
-                req.getParameter("nome").trim(),
-                req.getParameter("cognome").trim(),
-                req.getParameter("email").trim(),
-                LocalDate.parse(req.getParameter("data_di_nascita")),
-                req.getParameter("cellulare").trim(),
-                req.getParameter("password").trim()
-        );
+        		req.getParameter("nome"),
+        		req.getParameter("cognome"),
+        		req.getParameter("email"),
+        		req.getParameter("cellulare"),
+        		req.getParameter("password")
+        		);
+        try {
+        	LocalDate dataNascita = LocalDate.parse(req.getParameter("data_di_nascita"));
+        	utente.setDataDiNascita(dataNascita);
+        }
+        catch (Exception e) {
+        	utente.setDataDiNascita(null);
+        }
+        
         if (utenteValidator.validate(utente)) {
-            new UtenteService().createUsernameAndSave(utente);
-            resp.sendRedirect("login");
+            String username = new UtenteService().createUsernameAndSave(utente);
+            req.setAttribute("username", username);
+            getServletContext().getRequestDispatcher("/registrazioneEffettuata.jsp").forward(req, resp);
         } else {
             req.setAttribute("messaggiErrore", utenteValidator.getMessaggiErrore());
             getServletContext().getRequestDispatcher("/formRegistrazione.jsp").forward(req, resp);

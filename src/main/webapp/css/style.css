@@ -154,6 +154,7 @@ header ul li:hover {
 .login-form input:focus {
 	outline: none;
 	border: 2px solid #2b9cff;
+	transition: 0.05s;
 }
 
 .login-form button {
@@ -192,12 +193,12 @@ button:hover {
   	border-radius: 5px;
 }
 
-.registration-form form > div {
+.registration-form form > div:nth-child(1) {
 	font-size: 2rem;
 	margin-bottom: 50px;
 }
 
-.registration-form label {
+.registration-form form > div {
 	width: 100%;
 	margin-bottom: 10px; 
 	display: flex;
@@ -205,25 +206,25 @@ button:hover {
 	
 }
 
-.registration-form label div {
+.registration-form form > div div {
 	width: 100%;
 	margin-bottom: 5px;
 }
 
-.registration-form label div:nth-child(1) {
+.registration-form form > div div:nth-child(1) {
 	font-size: 1.1rem;
 }
 
-.registration-form label div:nth-child(2) {
+.registration-form form > div div:nth-child(2) {
 	height: 35px;
 }
 
-.registration-form label div:nth-child(3) {
+.registration-form form > div div:nth-child(3) {
 	font-size: 0.9rem;
 	color: red;
 }
 
-.registration-form label div input {
+.registration-form form > div div input {
 	height: 100%;
 	width: 100%;
 	font-size: 1rem;
@@ -234,7 +235,7 @@ button:hover {
 	background: #f1f1f1;
 }
 
-.registration-form label div input:focus {
+.registration-form form > div div input:focus {
 	outline: none;
 	background-color: #ddd;
 }
@@ -250,4 +251,115 @@ button:hover {
   	cursor: pointer;
   	font-size: 1rem;
   	font-weight: bold;
+}
+
+.admin-form {
+  	margin-top: 50px;
+  	padding-bottom: 130px;
+ 	display: flex;
+ 	flex-direction: column;
+	align-items: center;
+}
+
+.admin-form form {
+	width: 600px;
+	padding: 50px 20px;
+  	background-color: whitesmoke;
+  	box-shadow: 0 0 15px 0 rgba(0,0,0,0.2);
+	 border-radius: 5px;
+  	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+}
+
+.admin-form form > div:nth-child(1) {
+	font-size: 2rem;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.admin-form form > div {
+	width: 100%;
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.admin-form form > div div {
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+.admin-form form > div > :nth-child(1) {
+	display: flex;
+	align-items: center;
+}
+
+.admin-form form > div > :nth-child(1) label {
+	width: 110px;
+	font-size: 1.1rem;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.admin-form form > div > :nth-child(1) input[type=text], input[type=datetime-local] {
+	height: 35px;
+	margin-left: 20px;
+	border: solid 2px;
+	border-color: darkgrey;
+	font-size: 1rem;
+  	text-indent: 5px;
+  	flex-grow: 1;
+}
+
+.admin-form form > div > :nth-child(1) input[type=datetime-local] {
+	font-family: sans-serif;
+}
+
+.admin-form form > div > :nth-child(1) input[type=text]:focus, input[type=datetime-local]:focus {
+	outline: none;
+	border: solid 2px;
+	border-color: #2B9CFF;
+	transition: 0.5s;
+}
+
+.admin-form form > div > :nth-child(2) {
+	padding-left: 130px;
+	font-size: 0.9rem;
+	color: red;
+}
+
+.admin-form textarea {
+	height: 100px;
+	margin-left: 20px;
+	padding: 5px;
+	border: solid 2px;
+	border-color: darkgrey;
+	font-family: sans-serif;
+	font-size: 1rem;
+  	flex-grow: 1;
+}
+
+.admin-form textarea:focus {
+	outline: none;
+	border: solid 2px;
+	border-color: #2B9CFF;
+	transition: 0.5s;
+}
+
+.admin-form form > :nth-last-child(1) {
+	margin-top: 20px;
+}
+
+.admin-form form > :nth-last-child(1) button {
+	height: 35px;
+	width: 100px;
+	margin: 10px;
+	background-color: #2B9CFF;
+	border: 0;
+	border-radius: 5px;
+	color: white;
+	font-size: 1rem;
+	font-weight: bold;
+	cursor: pointer;
 }

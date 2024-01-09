@@ -12,7 +12,7 @@ public class UtenteService {
         this.utenteDao = new UtenteDaoImpl();
     }
 
-    public void createUsernameAndSave(Utente utente) {
+    public String createUsernameAndSave(Utente utente) {
         String username = "" + utente.getNome().toLowerCase().charAt(0) + utente.getNome().toLowerCase().charAt(1) + utente.getCognome().toLowerCase().charAt(0) + utente.getCognome().toLowerCase().charAt(1) + utente.getDataDiNascita().getYear();
         Utente ultimoUtenteConUsernameSimile = utenteDao.findLastUserWithUsernameLike(username);
         if (ultimoUtenteConUsernameSimile != null) {
@@ -26,6 +26,7 @@ public class UtenteService {
         }
         utente.setUsername(username);
         utenteDao.save(utente);
+        return username;
     }
 
     public void changeStateAndSaveByUsername(String username) {
@@ -48,4 +49,5 @@ public class UtenteService {
             utente.setRuolo('g');
         utenteDao.save(utente);
     }
+    
 }

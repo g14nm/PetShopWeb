@@ -30,7 +30,6 @@
                 <th scope="col">Nome</th>
                 <th scope="col">Cognome</th>
                 <th scope="col">Username</th>
-                <th scope="col">Data di nascita</th>
                 <th scope="col">Email</th>
                 <th scope="col">Cellulare</th>
                 <th scope="col">Password</th>
@@ -48,7 +47,6 @@
                     <td>${utente.nome}</td>
                     <td>${utente.cognome}</td>
                     <td>${utente.username}</td>
-                    <td>${utente.dataDiNascita}</td>
                     <td>${utente.email}</td>
                     <td>${utente.cellulare}</td>
                     <td>${utente.password}</td>
@@ -130,7 +128,7 @@
                 trNascosto = document.createElement('tr');
 
                 const spanTd = document.createElement('td');
-                spanTd.colSpan = 5;
+                spanTd.colSpan = 4;
                 trNascosto.appendChild(spanTd);
 
                 const emailTd = document.createElement('td');
