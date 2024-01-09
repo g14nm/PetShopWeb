@@ -1,0 +1,253 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+header {
+    height: 80px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: bold;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+header div {
+    color: white;
+    font-size: 2rem;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+}
+
+header ul li {
+    margin-left: 15px;
+}
+
+header ul li:hover {
+    transform: scale(1.2);
+}
+
+.table-section {
+    width: 100%;
+    margin-top: 40px;
+  	padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-section table {
+    width: 95%;
+    margin-top: 40px;
+    border-collapse: collapse;
+}
+
+.table-section table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.table-section table thead {
+    height: 40px;
+    width: 100%;
+}
+
+.table-section table th {
+    font-size: 1.1rem;
+    background-color: #2b9cff;
+    color: white;
+}
+
+.table-section table tbody {
+    width: 100%;
+}
+
+.table-section table td {
+    height: 90px;
+    padding: 10px;
+    min-width: 70px;
+    max-width: 150px;
+    text-align: center;
+    word-break: break-word;
+}
+
+.opzioni {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.table-section table td input {
+    width: 100%;
+}
+
+.info {
+    border: 1px white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+	height: 580px;
+  	width: 100%;
+  	margin-top: 50px;
+  	padding-bottom: 130px;
+ 	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.login-form form {
+ 	height: 100%;
+  	width: 350px;
+ 	font-size: 2rem;
+  	box-shadow: 0 0 15px 0 rgba(0,0,0,0.2);
+  	border-radius: 5px;
+  	display: flex;
+  	flex-direction: column;
+  	justify-content: space-around;
+  	align-items: center;
+}
+
+.login-form div {
+  	height: 12%;
+	width: 80%;
+}
+
+.login-form input {
+  	height: 100%;
+  	width: 100%;
+    font-size: 1rem;
+  	text-indent: 15px;
+ 	border: 1px solid #2b9cff;
+  	border-radius: 5px;
+}
+
+::placeholder {
+	color: gray;
+}
+
+.login-form input:focus {
+	outline: none;
+	border: 2px solid #2b9cff;
+}
+
+.login-form button {
+  	height: 100%;
+	width: 100%;
+  	background-color: #2B9CFF;
+  	color: white;
+  	border: 0;
+  	border-radius: 5px;
+  	cursor: pointer;
+  	font-size: 1rem; 
+  	font-weight: bold;
+}
+
+button:hover {
+	opacity: 0.7;
+}
+
+.error-text {
+	font-size: 1rem;
+	color: red;
+}
+
+.registration-form {
+	margin-top: 50px;
+	padding-bottom: 130px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.registration-form form {
+	width: 400px;
+	padding: 20px;
+	box-shadow: 0 0 15px 0 rgba(0,0,0,0.2);
+  	border-radius: 5px;
+}
+
+.registration-form form > div {
+	font-size: 2rem;
+	margin-bottom: 50px;
+}
+
+.registration-form label {
+	width: 100%;
+	margin-bottom: 10px; 
+	display: flex;
+	flex-direction: column;
+	
+}
+
+.registration-form label div {
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+.registration-form label div:nth-child(1) {
+	font-size: 1.1rem;
+}
+
+.registration-form label div:nth-child(2) {
+	height: 35px;
+}
+
+.registration-form label div:nth-child(3) {
+	font-size: 0.9rem;
+	color: red;
+}
+
+.registration-form label div input {
+	height: 100%;
+	width: 100%;
+	font-size: 1rem;
+	text-indent: 5px;
+	border: solid 1px;
+	border-color: darkgrey;
+	border-radius: 5px;
+	background: #f1f1f1;
+}
+
+.registration-form label div input:focus {
+	outline: none;
+	background-color: #ddd;
+}
+
+.registration-form button {
+  	height: 40px;
+	width: 100%;
+	margin: 20px 0 10px 0;
+  	background-color: #2B9CFF;
+  	color: white;
+  	border: 0;
+  	border-radius: 5px;
+  	cursor: pointer;
+  	font-size: 1rem;
+  	font-weight: bold;
+}
