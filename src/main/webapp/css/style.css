@@ -29,13 +29,38 @@ header a {
     text-decoration: none;
 }
 
-header div {
+header > div {
     color: white;
     font-size: 2rem;
 }
 
+header nav {
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+header nav > div {
+	height: 80%;
+	color: white;
+	border: solid 1.5px white;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+}
+
+header nav > div > span {
+	padding: 0 10px;
+}
+
+header nav > div > div {
+	padding: 0 10px;
+}
+
 header ul {
     list-style: none;
+    padding-left: 30px;
     display: flex;
 }
 

@@ -5,11 +5,26 @@
     <title>Clienti</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
 <header>
     <div>Pet Shop</div>
     <nav>
+    	<div>
+    		<span class="material-symbols-outlined">account_circle</span>
+    		<div>
+    			<div>${sessionScope.username}</div>
+    			<c:choose>
+                	<c:when test="${ruolo_autenticato eq 'm'}">
+                    	<div>Manager</div>
+                    </c:when>
+                    <c:otherwise>
+                        <div>Guest</div>
+                    </c:otherwise>
+                </c:choose>
+    		</div>
+    	</div>
         <ul>
             <li><a href="utenti">Utenti</a></li>
             <c:if test="${sessionScope.ruolo eq 'm'}">

@@ -4,11 +4,19 @@
     <title>Nuovo Animale</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
 	<header>
 	    <div>Pet Shop</div>
 	    <nav>
+	    	<div>
+	    		<span class="material-symbols-outlined">account_circle</span>
+	    		<div>
+	    			<div>${sessionScope.username}</div>
+	                <div>Manager</div>
+	    		</div>
+    		</div>
 	        <ul>
 	            <li><a href="utenti">Utenti</a></li>
 	            <li><a href="clienti">Clienti</a></li>
