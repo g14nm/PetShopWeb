@@ -32,7 +32,9 @@
                 <th scope="col">Username</th>
                 <th scope="col">Email</th>
                 <th scope="col">Cellulare</th>
-                <th scope="col">Password</th>
+                <c:if test="${ruolo_autenticato eq 'm'}">
+                    <th scope="col">Password</th>
+                </c:if>
                 <th scope="col">Ruolo</th>
                 <th scope="col">Stato</th>
                 <c:if test="${ruolo_autenticato eq 'm'}">
@@ -49,7 +51,9 @@
                     <td>${utente.username}</td>
                     <td>${utente.email}</td>
                     <td>${utente.cellulare}</td>
-                    <td>${utente.password}</td>
+                    <c:if test="${ruolo_autenticato eq 'm'}">
+                    	<td>${utente.password}</td>
+                	</c:if>
                     <c:choose>
                         <c:when test="${fn:substring(utente.ruolo, 0, 1) eq 'm'}">
                             <td>Manager</td>
