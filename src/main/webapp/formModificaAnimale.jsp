@@ -48,6 +48,7 @@
 		        </div>
 		        <div>${erroreConversioneNumero}</div>
 		    </div>
+		    <input type="hidden" name="matricola" value="${animale.matricola}">
 		    <p>
 		    	<button type="submit">Conferma</button>
 		    </p>

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
+<c:set var="ruolo_autenticato" value="${sessionScope.ruolo}"></c:set>
 <header>
     <div>Pet Shop</div>
     <nav>
@@ -27,7 +28,7 @@
     	</div>
         <ul>
             <li><a href="utenti">Utenti</a></li>
-            <c:if test="${sessionScope.ruolo eq 'm'}">
+            <c:if test="${ruolo_autenticato eq 'm'}">
                 <li><a href="animali">Animali</a></li>
             </c:if>
             <li><a href="logout">Logout</a></li>
